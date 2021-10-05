@@ -1,1 +1,13 @@
-qadwsa
+.left{
+    float: left;
+    clear: none;
+    width: 50%;
+}
+.right{
+    float: right;
+    clear: left ;
+    width: 50%;
+}
+img{
+    float: left;
+}
