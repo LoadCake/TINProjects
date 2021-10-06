@@ -5,7 +5,7 @@
 }
 .right{
     float: right;
-    clear: left ;
+    clear: none;
     width: 50%;
 }
 img{
