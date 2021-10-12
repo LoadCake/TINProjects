@@ -5,4 +5,4 @@ function palindrome(n)
     return tmp === n;
 }
 
-console.log(palindrome("kamilślimak"))
+console.log(palindrome("kobyłamamiłytułówabawółutyłimamałybok"))
