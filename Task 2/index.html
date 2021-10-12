@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Task 2</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<input type="text" placeholder="text input field"><br><br>
-<input type="password" placeholder="password input field"><br><br>
-<input type="checkbox" id="checkbox_id">
-<label for="checkbox_id">Checkbox</label><br><br>
-<input type="radio" id="radioButton1" name="group" value="1">
-<label for="radioButton1">one</label>
-<input type="radio" id="radioButton2"name="group" value="2">
-<label for="radioButton2">two</label>
-<input type="radio" id="radioButton3"name="group" value="3">
-<label for="radioButton3">three</label><br><label for="dropdownTable">This is a dropdown table</label><br>
 
-<select name="dropdownTable" id="dropdownTable">
-    <option value="ori">Ori</option>
-    <option value="ku">Ku</option>
-    <option value="gumo">Gumo</option>
-    <option value="naru">Naru</option></select><br><label for="textArea">This is a text area</label><br>
-<textarea name="textArea" id="textArea" cols="30" rows="10"></textarea><br><br>
-<input type="submit">
-<input type="reset">
+<form>
 
+    <label for="mandatory1" class="mandatory"> label ig</label><br>
+    <input type="text" id="mandatory1" placeholder="text input field"><br>
+    <label for="mandatory2" class="mandatory"> label 2 ig</label><br>
+    <input type="password" id="mandatory2" placeholder="password input field"><br><br>
+    <input type="checkbox" id="checkbox_id">
+    <label for="checkbox_id">Checkbox</label><br><br>
+    <input type="radio" id="radioButton1" name="group" value="1">
+    <label for="radioButton1">one</label>
+    <input type="radio" id="radioButton2" name="group" value="2">
+    <label for="radioButton2">two</label>
+    <input type="radio" id="radioButton3" name="group" value="3">
+    <label for="radioButton3">three</label><br><label for="dropdownTable">This is a dropdown table</label><br>
+
+    <select name="dropdownTable" id="dropdownTable">
+        <option value="ori">Ori</option>
+        <option value="ku">Ku</option>
+        <option value="gumo">Gumo</option>
+        <option value="naru">Naru</option>
+    </select><br><label for="textArea">This is a text area</label><br>
+    <textarea name="textArea" id="textArea" cols="30" rows="10"></textarea><br><br>
+    <input type="submit">
+    <input type="reset">
+</form>
 
 </body>
 </html>

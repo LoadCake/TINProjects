@@ -1,0 +1,12 @@
+form{
+    size: 20px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-style: oblique;
+}
+label{
+    color: blue;
+}
+
+label.mandatory{
+    color: red;
+}
