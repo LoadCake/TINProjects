@@ -22,7 +22,7 @@ header{
 }
 
 .textSection{
-    columns: 3;
+    columns: 300px;
 }
 
 main{
@@ -50,4 +50,19 @@ body{
     .textSection{
         columns: 1;
     }
+}
+
+.textImage{
+    margin: 2px 2px 2px 2px;
+    max-width: 200px;
+    float: left;
+}
+
+blockquote{
+    font-family: 'Festive', cursive;
+    font-size: 3em;
+    float: right;
+    color: darkblue;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
