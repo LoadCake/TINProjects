@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function emailValidate()
+        {
+            return /.+@.+\..+/.test(document.querySelector('#email').value)
+        }
+
+        function phoneValidate()
+        {
+            return /[0-9]{0,9}/.test(document.querySelector('#phone').value)
+        }
+
+
+        function submit()
+        {
+            if(!emailValidate() || !phoneValidate())
+            {
+                alert('invalid')
+            }
+            else
+            {
+                alert('pretty good')
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<label for="phone">insert a phone number</label>
+<input type="text" id="phone">
+<label for="email">insert an email</label>
+<input type="text" id="email">
+<input type="submit" onclick="submit()">
+</body>
+</html>
