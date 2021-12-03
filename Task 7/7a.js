@@ -4,33 +4,33 @@ const port = 3000
 
 const server = http.createServer(function(req, res)
 {
-    let requestURL = new url.URL(req.protocol + "://" + req.headers.host + req.url);
-    let searchParams = new URLSearchParams(requestURL.searchParams);
-    let pathname = requestURL.pathname;
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    let var1 = parseInt(searchParams.get("var1"));
-    let var2 = parseInt(searchParams.get("var2"));
+    let requestURL = new url.URL(req.protocol + "://" + req.headers.host + req.url)
+    let searchParams = new URLSearchParams(requestURL.searchParams)
+    let pathname = requestURL.pathname
+    res.writeHead(200, {'Content-Type': 'text/html'})
+    let var1 = parseInt(searchParams.get("var1"))
+    let var2 = parseInt(searchParams.get("var2"))
     if(Number.isNaN(var1) || Number.isNaN(var2))
     {
-        res.writeHead(400, {"Content-Type": "text/html"});
-        res.end();
-        return;
+        res.writeHead(400, {"Content-Type": "text/html"})
+        res.end()
+        return
     }
     switch(pathname)
     {
         case "/add":
         {
-            res.write(`${var1}+${var2}=${var1 + var2}`);
-            break;
+            res.write(`${var1}+${var2}=${var1 + var2}`)
+            break
         }
         case "/sub": {
-            res.write(`${var1}-${var2}=${var1 - var2}`);
-            break;
+            res.write(`${var1}-${var2}=${var1 - var2}`)
+            break
         }
         case "/mul":
         {
-            res.write(`${var1}*${var2}=${var1 * var2}`);
-            break;
+            res.write(`${var1}*${var2}=${var1 * var2}`)
+            break
         }
         case "/div":
         {
@@ -40,17 +40,17 @@ const server = http.createServer(function(req, res)
             }
             else
             {
-                res.write(`${var1}/${var2}=${var1 / var2}`);
+                res.write(`${var1}/${var2}=${var1 / var2}`)
             }
-            break;
+            break
         }
         default:
         {
-            res.writeHead(404, {'Content-Type': 'text/html'});
-            break;
+            res.writeHead(404, {'Content-Type': 'text/html'})
+            break
         }
     }
-    res.end();
+    res.end()
 })
 
 server.listen(port, function(error)
