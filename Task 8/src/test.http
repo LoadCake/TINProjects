@@ -1,0 +1,10 @@
+POST http://localhost:3000/jsondata
+Content-Type: application/json
+
+{
+  "heading": "heading message",
+  "text": "text message",
+  "subtext": "subtext message"
+}
+
+###

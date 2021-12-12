@@ -1,0 +1,17 @@
+{
+  "name": "tinprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "8a.js",
+  "type": "module",
+  "scripts": {
+    "serve": "node \"Task 8\"/src/8a.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2"
+  }
+}
