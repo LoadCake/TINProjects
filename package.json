@@ -5,13 +5,19 @@
   "main": "8a.js",
   "type": "module",
   "scripts": {
-    "serve": "node \"Task 8\"/src/8a.js"
+    "task8": "node \"Task 8\"/src/8a.js",
+    "task9": "node \"Task 9\"/src/9a.js",
+    "task10": "cd \"Task 10\" && webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.1",
-    "express-handlebars": "^6.0.2"
+    "express-handlebars": "^6.0.2",
+    "webpack": "^5.65.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.1"
   }
 }

@@ -1,0 +1,85 @@
+<style>
+    div.alertHidden
+    {
+        display: none;
+    }
+    div.success
+    {
+        background-color: lawngreen;
+    }
+    div.error
+    {
+        background-color: red;
+    }
+</style>
+<script>
+  function submit() {
+    const request = new XMLHttpRequest()
+    request.addEventListener('load', function () {
+      const responseData = JSON.parse(this.responseText)
+
+      if (responseData.status === 'error') {
+        alert('Invalid fields: ' + responseData.invalid_fields)
+      }
+      else if(responseData.status === 'success')
+      {
+          let operation = document.getElementById("ArithmeticOperations").value
+          let alertMessage = document.getElementById('response-alert')
+          switch(operation)
+          {
+              case "Addition":
+                  alertMessage.classList.add('success')
+                  alertMessage.innerText = Number(document.getElementById('number1').value) + "+" + Number(document.getElementById('number2').value) + '=' + Number(Number(document.getElementById('number1').value) + Number(document.getElementById('number2').value))
+                  break
+              case "Subtraction":
+                  alertMessage.classList.add('success')
+                  alertMessage.innerText = Number(document.getElementById('number1').value) + "-" + Number(document.getElementById('number2').value) + '=' + Number(Number(document.getElementById('number1').value) - Number(document.getElementById('number2').value))
+                  break
+              case "Multiplication":
+                  alertMessage.classList.add('success')
+                  alertMessage.innerText = Number(document.getElementById('number1').value) + "*" + Number(document.getElementById('number2').value) + '=' + Number(Number(document.getElementById('number1').value) * Number(document.getElementById('number2').value))
+                  break
+              case "Division":
+                  alertMessage.classList.add('success')
+                  alertMessage.innerText = Number(document.getElementById('number1').value) + "/" + Number(document.getElementById('number2').value) + '=' + Number(Number(document.getElementById('number1').value) / Number(document.getElementById('number2').value))
+                  break
+              default:
+                  alertMessage.classList.add('error')
+                  alertMessage.innerText = "something went wrong"
+                  break
+          }
+          alertMessage.classList.remove("alertHidden")
+      }
+
+    })
+    request.open('POST', '/ajax')
+    request.setRequestHeader('Content-Type', 'application/json')
+    request.send(JSON.stringify({
+        number1: Number(document.getElementById('number1').value),
+        number2: Number(document.getElementById('number2').value),
+        operation: String(document.getElementById("ArithmeticOperations").value)
+    }))
+
+  }
+</script>
+
+<label for="number1">First Number</label>
+<input id="number1">
+
+<label for="number2">Second Number</label>
+<input id="number2">
+
+<label for="ArithmeticOperations">Arithmetic Operation</label>
+<select name="ArithmeticOperations" id="ArithmeticOperations">
+    <option value="Addition">Addition</option>
+    <option value="Subtraction">Subtraction</option>
+    <option value="Multiplication">Multiplication</option>
+    <option value="Division">Division</option>
+</select>
+<button onclick="submit()">Send</button>
+<br>
+<div id="response-alert" class="alertHidden">
+
+</div>
+
+
