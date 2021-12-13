@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "8a.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "task8": "node \"Task 8\"/src/8a.js",
     "task9": "node \"Task 9\"/src/9a.js",

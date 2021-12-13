@@ -1,9 +1,34 @@
 <html>
   <head>
+    <style>
+      .hidden{
+        display: none;
+      }
+      .show{
+
+      }
+    </style>
     <title>title</title>
   </head>
   <body>
-    <script src="./Task 10/src/index.js"></script>
+  <script src="./dist/main.js"></script>
+  <script>
+      function submit()
+      {
+        let result = document.getElementById("result")
+        result.classList.add("show")
+        result.classList.remove("hidden")
+        if(document.getElementById("mode").value === "convertTemperature")
+        {
+          result.innerText = String(convertTemperature(Number(document.getElementById("valueToConvert").value), document.getElementById("FirstUnit").value, document.getElementById("SecondUnit").value))
+        }
+        else
+        {
+          result.innerText = String(convertDistance(Number(document.getElementById("valueToConvert").value), document.getElementById("FirstUnit").value, document.getElementById("SecondUnit").value))
+        }
+      }
+    </script>
+
     <label for="valueToConvert">value</label>
     <input id="valueToConvert">
 
@@ -30,5 +55,11 @@
       <option value="convertTemperature">Convert Temperature</option>
       <option value="convertDistance">Convert Distance</option>
     </select>
+
+    <button onclick="submit()">Send</button>
+
+  <div class="hidden" id="result">
+
+  </div>
   </body>
 </html>
